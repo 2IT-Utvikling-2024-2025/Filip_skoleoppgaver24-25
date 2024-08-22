@@ -1,4 +1,18 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 li {
+  border: 1px solid black;
   float: left;
   padding: 20px;
+  margin: 20px;
+  color: black;
+}
+li a:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
