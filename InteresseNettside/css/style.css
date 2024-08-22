@@ -5,17 +5,16 @@ ul {
   overflow: hidden;
 }
 button {
-  background-color: white;
-  border: none;
+  /*  background-color: white;
+  border: none; */
 }
-li {
-  border: 1px solid black;
-  float: left;
-  padding: 20px;
-  margin: 20px;
-  color: black;
-}
-li:hover {
-  transform: scale(1.1);
-  transition: 0.5s;
+
+.gaming,
+.lydbok,
+.manga,
+.programmering {
+  border: 1px solid;
+  max-width: 2%;
+  display: flex;
+  flex-wrap: wrap;
 }
