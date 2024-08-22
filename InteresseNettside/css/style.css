@@ -4,7 +4,10 @@ ul {
   padding: 0;
   overflow: hidden;
 }
-
+button {
+  background-color: white;
+  border: none;
+}
 li {
   border: 1px solid black;
   float: left;
@@ -12,7 +15,7 @@ li {
   margin: 20px;
   color: black;
 }
-li a:hover {
+li:hover {
   transform: scale(1.1);
   transition: 0.5s;
 }
