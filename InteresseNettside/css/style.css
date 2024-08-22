@@ -1,12 +1,6 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-button {
-  /*  background-color: white;
-  border: none; */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #gaming,
@@ -17,4 +11,5 @@ button {
   display: flex;
   flex-wrap: wrap;
   max-width: 20%;
+  margin: 10px;
 }
