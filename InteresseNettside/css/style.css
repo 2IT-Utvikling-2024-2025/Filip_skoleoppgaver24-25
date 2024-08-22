@@ -9,12 +9,12 @@ button {
   border: none; */
 }
 
-.gaming,
-.lydbok,
-.manga,
-.programmering {
+#gaming,
+#lydbok,
+#manga,
+#prog {
   border: 1px solid;
-  max-width: 2%;
   display: flex;
   flex-wrap: wrap;
+  max-width: 20%;
 }
