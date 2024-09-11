@@ -6,10 +6,23 @@ import MyButton from './button.jsx';
 import Profile from './profile.jsx';
 
 function App() {
+  let user = {
+    name: 'Filip',
+    age: 17,
+    adress: 'Ettsted 123',
+  };
+
+  let content;
+  let isLoggedIn = true;
+
+  let time = new Date().toLocaleTimeString();
   return (
     <>
-      <MyButton />
-      <Profile />
+      <p>
+        {user.name}, {user.age} og bor i {user.adress}
+      </p>
+      <div>{isLoggedIn ? <MyButton /> : <Profile />}</div>
+      {time}
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './MyHobbies.css';
+import './css/MyHobbies.css';
 
 const hobbies = [
   { title: 'Gaming', isFavorite: true, upVote: 0, id: 1 },
@@ -9,7 +9,7 @@ const hobbies = [
 export default function MyHobbies() {
   const listItems = hobbies.map((hobby) => (
     <li
-      key={hobby.key}
+      key={hobby.id}
       style={{ color: hobby.isFavorite ? 'magenta' : 'white' }}
     >
       {hobby.title}

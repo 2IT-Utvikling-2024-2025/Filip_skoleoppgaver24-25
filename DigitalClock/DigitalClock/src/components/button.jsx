@@ -16,7 +16,6 @@ export default function MyButton() {
       >
         Im a button
       </button>
-      <h1>{navn}</h1>
     </>
   );
 }

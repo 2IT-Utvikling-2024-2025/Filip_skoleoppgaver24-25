@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import './profil.css';
+import './css/profil.css';
 
 const ferdigheter = [
   { title: 'Programmering', upVote: 0, id: 1 },
   { title: 'IT', upVote: 0, id: 2 },
 ];
 
-export default function Profil({ vote, setVote }) {
+export default function Profil() {
   const listItems = ferdigheter.map((ferdighet) => (
     <li key={ferdighet.id}>
       {ferdighet.title}
@@ -31,7 +31,7 @@ export default function Profil({ vote, setVote }) {
         </p>
       </div>
       <br />
-      <ul>{listItems()}</ul>
+      <ul>{listItems}</ul>
     </>
   );
 }
