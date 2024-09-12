@@ -10,7 +10,7 @@ import ClassTable from './ClassTable.jsx';
 function App() {
   return (
     <>
-      <ClassTable />
+      {/* <ClassTable /> */}
       {/* <MyList /> */}
       {/*  <MyHobbies /> */}
       {/* <Profil /> */}

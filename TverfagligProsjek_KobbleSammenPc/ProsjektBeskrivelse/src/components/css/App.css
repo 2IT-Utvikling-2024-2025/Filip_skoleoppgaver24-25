@@ -40,3 +40,34 @@
 .read-the-docs {
   color: #888;
 }
+ul {
+  list-style-type: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+h2 {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
+
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+button:hover {
+  filter: drop-shadow(0 0 10px #646cffaa);
+}
+
+.intro,
+.plan,
+.doc,
+.learned {
+  display: none;
+}

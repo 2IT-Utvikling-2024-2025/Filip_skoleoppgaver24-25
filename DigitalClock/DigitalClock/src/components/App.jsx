@@ -1,30 +1,36 @@
-import { useState } from 'react';
-import reactLogo from '../assets/react.svg';
-import viteLogo from '../../public/vite.svg';
+import { useState, useEffect, Component } from 'react';
+import Pescador from 'react-explode/Pescador';
+
 import './css/App.css';
-import MyButton from './button.jsx';
-import Profile from './profile.jsx';
 
-function App() {
-  let user = {
-    name: 'Filip',
-    age: 17,
-    adress: 'Ettsted 123',
-  };
-
-  let content;
-  let isLoggedIn = true;
-
-  let time = new Date().toLocaleTimeString();
-  return (
-    <>
-      <p>
-        {user.name}, {user.age} og bor i {user.adress}
-      </p>
-      <div>{isLoggedIn ? <MyButton /> : <Profile />}</div>
-      {time}
-    </>
-  );
+class ReactExplode extends Component {
+  render() {
+    return (
+      <Pescador
+        size="400"
+        delay={0}
+        repeatDelay={0}
+        repeat={5}
+      />
+    );
+  }
 }
+export default function App() {
+  const [time, setTime] = useState(3);
 
-export default App;
+  useEffect(() => {
+    const myinterval = setInterval(() => {
+      if (time == 0) {
+        setTimeout(() => {
+          setTime(3);
+        }, 600);
+      } else {
+        setTime(time - 1);
+      }
+    }, 1000);
+
+    return () => clearInterval(myinterval);
+  }, [time]);
+
+  return <>{time == 0 ? <ReactExplode /> : <p>{time}</p>}</>;
+}
