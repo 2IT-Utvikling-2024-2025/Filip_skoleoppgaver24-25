@@ -1,0 +1,26 @@
+.textInput {
+  height: 50px;
+  width: 200px;
+  margin: 10px;
+}
+.submit {
+  height: 56px;
+  width: 100px;
+}
+
+ul {
+  border: 1px solid white;
+  list-style: none;
+  padding-inline-start: 0px;
+  font-size: 20px;
+}
+
+li {
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+.checkbox {
+  height: 20px;
+  width: 20px;
+}

@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import './css/TodoInput.css';
 
 let nextId = 0;
 
-export default function TodoInput() {
-  const [item, setItem] = useState('');
+export default function CmInput() {
+  const [cm, setCm] = useState('');
   const [list, setList] = useState([]);
 
   return (
@@ -12,7 +11,7 @@ export default function TodoInput() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          setList([...list, { id: nextId++, name: item, done: false }]);
+          setList([...list, { id: nextId++, name: cm / 2.54 }]);
         }}
       >
         <label>
@@ -20,9 +19,9 @@ export default function TodoInput() {
           <br />
           <input
             className="textInput"
-            type="text"
-            value={item}
-            onChange={(e) => setItem(e.target.value)}
+            type="number"
+            value={cm}
+            onChange={(e) => setCm(e.target.value)}
           />
         </label>
         <input
