@@ -8,10 +8,7 @@
   text-align: center;
   transition: 0.2s;
 }
-.student:hover {
-  height: 125%;
-  width: 110px;
-}
+
 .student-container {
   border: 1px solid white;
   display: flex;

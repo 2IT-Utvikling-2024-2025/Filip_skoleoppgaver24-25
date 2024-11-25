@@ -1,26 +1,67 @@
-import { useState } from 'react';
+/* import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Students from './Students.jsx';
+import jsonList from './Section.json';
 export default function ClassList() {
-  const [ClassList, setClassList] = useState([
-    { id: 1, age: 17, name: 'Filip' },
-    { id: 2, age: 17, name: 'Nahuel' },
-    { id: 3, age: 17, name: 'Andreas' },
-    { id: 4, age: 19, name: 'Jørgen' },
-    { id: 5, age: 16, name: 'Felix' },
-    { id: 6, age: 17, name: 'Svein' },
-    { id: 7, age: 17, name: 'Noah' },
-  ]);
+  return (
+    <div className="Section-parent">
+      {Object.entries(jsonList).map(([sectionName, sectionItems]) => (
+        <div
+          key={sectionName}
+          className="Section"
+        >
+          {sectionItems.map((item) => (
+            <Link
+              to={'http://localhost:5173/studentpage/' + item.name}
+              key={item.id}
+            >
+              <Students
+                key={item.id}
+                name={item.name}
+                age={item.age}
+              />
+            </Link>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+ */
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+export default function ClassList() {
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/v1/students');
+        const data = await response.json();
+        setStudents(data);
+      } catch (error) {
+        console.error('Error fetching students:', error);
+      }
+    };
+
+    fetchStudents();
+  }, []);
 
   return (
-    <>
-      <h1>ClassList</h1>
-      {ClassList.map((student) => (
-        <Students
+    <div>
+      <h1>Student List</h1>
+      {students.map((student) => (
+        <Link
+          to={'http://localhost:5173/studentpage/' + student.name}
           key={student.id}
-          name={student.name}
-          age={student.age}
-        />
+        >
+          <div key={student.id}>
+            <p>{student.name}</p>
+            <p>{student.age}</p>
+          </div>
+        </Link>
       ))}
-    </>
+    </div>
   );
 }
